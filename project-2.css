@@ -1,0 +1,307 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: black;
+    color: #fff;
+    overflow:hidden ; /*jab bhe hamare pass bahut sara content hota hai toh hamare pass right side ya left side main scroll bar dikh jata hai, jiske help se hum uppar niche scroll kar sakte hai (you may go through overflowmdn but yahan hidden is lye kiye q k mera spotify ka main page scrollable nhi hai bus iska main content is scrollable hai so isko hidden kar diye ) */
+}
+
+.main {
+    display: flex;
+    height: 100vh;/*hum chahte hai humen pura screen ka view mile*/
+    padding: 0.5rem;
+}
+
+.sidebar {
+    background-color: black;
+    width: 340px;
+    border-radius: 1rem;/*1 rem = 16px*/
+    margin-right: 0.5rem;
+}
+
+.main-content {
+    background-color: #121212;
+    flex: 1;/*bhai jo bhe jagah bach rahi hai sari ki sari mujhe de do , chahe meri size choti hi q na ho*/
+    border-radius: 1rem;
+    overflow: auto;/*auto ka matlab scroll bar hamesha dikhai nhi dega jab zarurat rhegi tab dikhai dega*/
+    padding: 0 1.5rem 0 1.5rem ;
+}
+
+.music-player {
+    background-color:black ;
+    position: fixed;
+    bottom: 0px;/*hum chahte hai k ye bottom main chipak jaye is lye position fix de kar bottom se 0px kar diye*/
+    width: 100%; /*ab chahte hai k ye niche ki puri ki puri width le le is lye */
+    height: 72px; /*spotify k side se sara details lere hai kitna bada hoga kitna height hoga sb kch*/
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav {
+    background-color:#121212;
+    border-radius: 1rem;
+    display: flex; /*is se nav k aandar ka sb ek line main aa jayega..*/
+    flex-direction: column; /*is se kiya hua k ye alag alag line main aa jayega*/
+    justify-content: center;
+    height: 100px;/* site k hisab se height rakh diye */
+    padding: 0.5rem 0.75rem; /*rem main units dere hai bs isko responsive banane k lye*/
+
+}
+
+.nav-option {
+   line-height: 2.5rem ; /* ek line kitna height occupy kare gi..*/
+   opacity: 0.7;
+   padding: 0.5rem 0.75rem;
+
+}
+
+.nav-option:hover {
+    opacity: 1;
+ 
+ }
+ 
+
+.nav-option i {
+    font-size: 1.25rem;
+}
+.nav-option a {
+    font-size: 1rem;
+    margin-left: 1rem;
+} 
+
+.library {
+    background-color: #121212;
+    border-radius: 1rem;
+    height: 100%; /* pure niche tak isse hi height diya gaya hai*/
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.options {
+    display: flex; /* tak'e sare k sare element ek line main aa jaye*/
+    justify-content: space-between; /* right wali chiz right main cale gayi nd left wali left main */
+    align-items: center;
+}
+
+.lib-options img {
+    height: 1.25rem; /* uppar icons ko jitna size diye hai utna isko bhe diye hai*/
+    width: 1.25rem;
+}
+ .icons{
+   font-size: 1.25rem;
+   display: flex;
+ }
+
+ .icons i {
+    opacity: 0.7;
+    margin-right: 1rem;
+ } 
+
+ .icons i:hover {
+    opacity: 1;
+ }
+
+ .box {
+    background-color: #232323;
+    height: 8rem;
+    border-radius: 0.75rem;
+    margin: 0.75rem 0 1.75rem 0;
+    padding: 0.75rem 1rem;
+ }
+
+ .box-p1 {
+    font-size: 1rem;
+    font-weight: 500;
+ }
+ .box-p2 {
+    font-size: 0.85rem;
+    opacity: 0.9;
+ }
+.badge {
+    background-color: #fff;
+    border: none;
+    border-radius: 100px;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    margin: 0.5rem;
+    height: 2rem;
+    width: fit-content; /* content fit ho jayega bs*/
+}
+.dark-badge {
+    background-color: #000;
+    color: #fff;
+}
+
+.sticky-nav {
+    position: sticky;
+    top: 0; /*ab ja kar sticky kaam kare ga*/
+    background-color: #121212;
+    display: flex;
+    justify-content: space-between; /* jitna content hai equally space main phail gaya*/
+    align-items: center;
+    padding: 1rem 0 1rem 0;
+    z-index: 10; /* ho kya raha tha na mera card main jo kch bhe para likha hua tha woh navigation baar k uppar aa ja raha tha scroll karne se is lye navigation bar ko uppar kar diye*/
+}
+
+.sticky-nav-icons {
+    margin-left: 0.75rem;
+}
+.sticky-nav-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sticky-nav button {
+    margin-left: 0.5rem;
+}
+.nav-item {
+    margin: 1rem;
+}
+
+@media (max-width: 1000px) {
+    .hide {
+        display: none;
+    }
+}
+
+.card {
+    background-color: #232323;
+    width: 150px;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+.cards-container {
+    display: flex;
+    flex-wrap: wrap; /* ho kya raha tha hum jitne bhe card ko insert kar rahe the na woh sare k sare ek line main hi ate jare the is lye wrap kar diye k woh apni length and width ko retain kar k rakhe [isko dalne se mera page or responsive ban gaya hai, screen chota karne se card ek lines main chote nhi hore hai bale card next line main chale jara hai]*/
+
+}
+.card-img {
+    width: 100%;
+    border-radius: 0.5rem ;
+}
+.card-title {
+    font-weight: 600;
+}
+.card-info {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.footer {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.line {
+    width: 90%;
+    height: 50%;
+    border-top: 1px solid white;
+    opacity: 0.4;
+}
+
+.music-player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 77rem;
+}
+.album {
+    width: 25%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.alb-img {
+    height: 2rem;
+    margin-right: 1rem;
+    justify-content: center;
+    display: flex;
+    margin: 5px;
+    align-items: center;
+}
+.big-img {
+    height: 3rem;
+    border-radius: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.25rem;
+}
+.alb-p {
+ margin-top: 0.8rem;    
+ margin-bottom: 0.8rem;
+ font-size: 15px;
+ line-height: 5px;
+ 
+}
+.david {
+    opacity: 0.7;
+    font-size: 14px;
+}
+.player {
+    width: 50%;
+    padding: 0;
+    margin: 0;
+}
+.controls {
+    width: 40%; 
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+.con-img {
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 3rem;
+}
+.player{
+    width: 100%;
+}
+.player-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.player-control-icon {
+ height: 1rem;   
+ margin-right: 1rem;
+ opacity: 0.7;
+}
+.player-control-icon:hover {
+    opacity: 1;
+}
+.playback-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress-bar {
+    width: 70%;
+    /* justify-content: center; */
+    appearance: none; /*iski jo bhe property thi sari ki sari property hat jayegi and ye ekdm simple sa ban jayega [aisa is lye kar rahe hai q k humen khud se isse styling dena hai ]*/
+    background-color: transparent;
+    cursor: pointer; /*is se jaise hi apna cursor wahan le kar jayenge woh aunli ban jayega*/
+
+}
+.progress-bar::-webkit-slider-runnable-track { /*apne progress bar ka track ka style ko control karenge, or ye pseudo element hai is lye iske lye double :: use kiye*/
+    background-color: #ddd;
+    border-radius: 100px;
+    height: 0.2rem;
+}
+.progress-bar::-webkit-slider-thumb {/*slider k uppar jo pointer hai jisko pakad kar aage piche kar rahe hai usse thumpp kehte hai , so thump jo hai woh slider k center par nhi hai usko thik jagah main karna hoga*/
+    appearance: none; /*iski by default appearance ko hata diye*/
+    height: 1rem;
+    width: 1rem;
+    background-color: #1bd760;
+    border-radius: 50%;
+    margin-top: -6px;
+}
